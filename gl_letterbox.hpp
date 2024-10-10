@@ -160,7 +160,7 @@ namespace gllb {
 			const double& _origin_y, 
 			double& _out_x,
 			double& _out_y
-		) 
+		) const 
 		{
 			switch (m_align) {
 			case (LetterboxAlign::None): {

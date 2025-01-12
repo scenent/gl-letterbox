@@ -77,8 +77,8 @@ public:
 		glUseProgram(0);
 	}
 public:
-	void set_uint(const std::string& _name, const uint32_t& _value) const {
-		glUniform1ui(glGetUniformLocation(m_ID, _name.c_str()), _value);
+	void set_int(const std::string& _name, const int& _value) const {
+		glUniform1i(glGetUniformLocation(m_ID, _name.c_str()), _value);
 	}
 	void set_vec2(const std::string& _name, const float& _x, const float& _y) const {
 		glUniform2f(glGetUniformLocation(m_ID, _name.c_str()), _x, _y);
@@ -287,7 +287,7 @@ public:
 					
 					glActiveTexture(GL_TEXTURE0 + 0);
 					glBindTexture(GL_TEXTURE_2D, m_screenTextureID);
-					m_spriteShader->set_uint("uTexture", m_screenTextureID);
+					m_spriteShader->set_int("uTexture", 0);
 					m_spriteShader->set_vec2("uTexSize", static_cast<float>(m_windowOriginWidth), static_cast<float>(m_windowOriginHeight));
 					m_spriteShader->set_mat4("uViewProj", m_viewProjMatrix.data());
 					m_spriteShader->set_mat4("uModel", m_modelMatrix.data());
